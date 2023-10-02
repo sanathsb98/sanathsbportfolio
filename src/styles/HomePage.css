@@ -39,9 +39,9 @@
 .my-name{
     margin-left: 1%;
     margin-top: 30px;
-    font-size: clamp(16px, 5vw, 24px);
+    font-size: clamp(16px, 5vw, 12px);
     font-weight: 500;
-    color: rgb(0, 0, 0);
+    color: rgb(145, 145, 145);
 }
 .section-3{
 
@@ -120,10 +120,17 @@
     height: 100vh;
 }
 .text-mode-1{
-    color: #000000;
+    color: #d7d7d7;
+    font-size: 80px;
+ 
 }
 .text-mode-2{
-    color: #c4c4c4;
+    color: #d9d9d9;
+}
+.text-mode-3{
+    font-size: 32px;
+    color: #a9a9a9;
+    line-height: 10px;
 }
 
 
@@ -166,4 +173,37 @@
     font-weight: bold;
     font-size: 8vw;
   }
-  
+  .balls-1{
+    width: 100px;
+    height: 100px;
+    background-color: #ffe7fa;
+    position: absolute;
+    border-radius: 100px;
+    left: 10%;
+    z-index: -1;
+  }
+.react-logo{
+    width: 100px;
+    height: 100px;
+    margin: 10px 5%;
+}
+.express-logo{
+    width: 160px;
+    height: 120px;
+    margin: 10px 5%;
+}
+.supabase-logo{
+    width: 100px;
+    height: 100px;
+    margin: 10px 5%;
+}
+.mongodb-logo{
+    width: 100px;
+    height: 100px;
+    margin: 10px 5%;
+}
+.python-logo{
+    width: 100px;
+    height: 100px;
+    margin: 10px 7%;
+}

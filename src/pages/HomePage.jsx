@@ -7,7 +7,13 @@ import { useInView } from 'react-intersection-observer';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { debounce } from 'lodash';
-import video from '../videos/design.mp4'
+import video from '../videos/design.mp4';
+import react from '../images/react.png';
+import express from '../images/express.png';
+import next from '../images/next.png';
+import supabase from '../images/supabase.png';
+import mongodb from '../images/mongodb.png';
+import python from '../images/python.png'
 
 const slideUp = {
   initial: {
@@ -32,7 +38,14 @@ const HomePage = () => {
   const secondText = useRef(null);
   const thirdText = useRef(null);
   const fourthText = useRef(null);
+  const fifthText = useRef(null);
+  const sixthText = useRef(null);
   const slider = useRef(null);
+  const thirdLogo = useRef(null);
+  const fourthLogo = useRef(null);
+  const fifthLogo = useRef(null);
+  const sixthLogo = useRef(null);
+  const seventhLogo = useRef(null)
   let xPercent = 0;
   let direction = -20;
 
@@ -94,6 +107,13 @@ const HomePage = () => {
     gsap.set(secondText.current, { xPercent: xPercent });
     gsap.set(thirdText.current, { xPercent: xPercent });
     gsap.set(fourthText.current, { xPercent: xPercent });
+    gsap.set(fifthText.current, { xPercent: xPercent });
+    gsap.set(sixthText.current, { xPercent: xPercent });
+    gsap.set(thirdLogo.current, { xPercent: xPercent });
+    gsap.set(fourthLogo.current, { xPercent: xPercent });
+    gsap.set(fifthLogo.current, { xPercent: xPercent });
+    gsap.set(sixthLogo.current, { xPercent: xPercent });
+    gsap.set(seventhLogo.current, { xPercent: xPercent });
     requestAnimationFrame(animate);
     xPercent += 0.01 * direction;
   };
@@ -132,7 +152,7 @@ const HomePage = () => {
 
         <div className="my-name">
           SANATH SB |{' '}
-          <span style={{ color: 'black' }}>
+          <span style={{ color: 'rgb(145, 145, 145)' }}>
             <Typewriter
               words={['REACT JS', 'NEXT JS', 'EXPRESS JS', 'PYTHON', 'FULLSTACK DEVELOPER']}
               loop={5}
@@ -146,14 +166,48 @@ const HomePage = () => {
       </div>
 
        <div className='section-3'>
+        {/* <div className='balls-1'></div> */}
+      
 
         <div data-scroll data-scroll-speed={0.1} className='section-3-sub-1'>
           <div className='section-3-sub-1-text1'>
           <motion.main variants={slideUp} initial="initial" animate="enter" className="landing">
         <div>
           <div ref={slider} className="slider">
-            <p className='text-mode-1' ref={firstText}>DEVELOPER DESIGNER - DEVELOPER DESIGNER - DEVELOPER DESIGNER -</p>
-            <p className='text-mode-2' ref={secondText}>DESIGNER DEVELOPER - DESIGNER DEVELOPER - DEVELOPER DESIGNER -</p>
+            <p className='text-mode-1' ref={firstText}>DEVELOPER DESIGNER <span style={{color:'black'}}>DEVELOPER</span> DESIGNER <span style={{color:'black'}}>DEVELOPER</span> DESIGNER -</p>
+            <p className='text-mode-2' ref={secondText}>DESIGNER DEVELOPER <span style={{color:'black'}}>DESIGNER</span> DEVELOPER DEVELOPER DESIGNER -</p>
+
+                  <div ref={fourthLogo}  style={{marginTop:'100px', display: 'flex',justifyContent:'space-between',alignItems: 'center' }}>
+
+                  
+                    <img className='react-logo' src={react} alt="React Logo" />
+
+                
+                    <img className='express-logo' src={express} alt="Express Logo" />
+
+                 
+                    <img className='supabase-logo' src={supabase} alt="Express Logo" />
+
+                    
+                    <img className='mongodb-logo'  src={mongodb} alt="Express Logo" />
+
+                    <img className='python-logo'  src={python} alt="Express Logo" />
+                    
+                    <img className='react-logo' src={react} alt="React Logo" />
+
+                
+                    <img className='express-logo'  src={express} alt="Express Logo" />
+
+                 
+                    <img className='supabase-logo'  src={supabase} alt="Express Logo" />
+
+                    
+                    <img className='mongodb-logo'  src={mongodb} alt="Express Logo" />
+
+                    <img className='python-logo'  src={python} alt="Express Logo" />
+
+                   
+                  </div>
           </div>
         </div>
       </motion.main>
@@ -192,9 +246,9 @@ const HomePage = () => {
       </div>
 
 
-
+{/* 
       <div className="section-5">section 5 height 100vh</div>
-      <div className="section-6">section 6 height 100vh</div>
+      <div className="section-6">section 6 height 100vh</div> */}
     </div>
   );
 };

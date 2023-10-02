@@ -6,8 +6,8 @@
     height: 80px;
     margin-left: 20px;
     transition: all 0.5s ease;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    color: black;
+    /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+    color: rgb(123, 120, 120);
 }
 .animate-navbar{
   
@@ -15,8 +15,8 @@
     width: 100%;
     top: 0;
     height: 80px;
-    /* background-color: rgba(146, 122, 122, 0.8); */
-    z-index: 10;
+    background-color:white;
+    z-index: 100;
     transition: all 0.3s ease-in-out; 
     font-size: clamp(12px, 5vw, 16px);
     font-weight: 500;
