@@ -7,6 +7,7 @@ import { useInView } from 'react-intersection-observer';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { debounce } from 'lodash';
+import video from '../videos/design.mp4'
 
 const slideUp = {
   initial: {
@@ -33,7 +34,24 @@ const HomePage = () => {
   const fourthText = useRef(null);
   const slider = useRef(null);
   let xPercent = 0;
-  let direction = -1;
+  let direction = -20;
+
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const handleMetadataLoad = () => {
+      videoRef.current.play();
+    };
+  
+    // Add an event listener for metadata loaded
+    videoRef.current.addEventListener('loadedmetadata', handleMetadataLoad);
+  
+    // Cleanup the event listener when the component unmounts
+    return () => {
+      videoRef.current.removeEventListener('loadedmetadata', handleMetadataLoad);
+    };
+  }, []);
+  
 
   useEffect(() => {
     const handleScroll = debounce(() => {
@@ -53,14 +71,14 @@ const HomePage = () => {
     gsap.to(slider.current, {
       scrollTrigger: {
         trigger: document.documentElement,
-        scrub: 0.25, // Adjust this value
+        scrub: 0.2, // Adjust this value
         start: 0,
         end: window.innerHeight,
         onUpdate: (e) => {
           direction = e.direction * -1;
         }
       },
-      x: '-500px'
+      x: '-100px'
     });
     
     requestAnimationFrame(animate);
@@ -104,7 +122,7 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="homepage">
+    <div className="homepage container ">
       <div className="section-1"></div>
 
       <div className="section-2">
@@ -114,7 +132,7 @@ const HomePage = () => {
 
         <div className="my-name">
           SANATH SB |{' '}
-          <span style={{ color: 'rgb(85, 85, 106)' }}>
+          <span style={{ color: 'black' }}>
             <Typewriter
               words={['REACT JS', 'NEXT JS', 'EXPRESS JS', 'PYTHON', 'FULLSTACK DEVELOPER']}
               loop={5}
@@ -134,8 +152,8 @@ const HomePage = () => {
           <motion.main variants={slideUp} initial="initial" animate="enter" className="landing">
         <div>
           <div ref={slider} className="slider">
-            <p className='text-mode-1' ref={firstText}>DEVELOPER DESIGNER - DEVELOPER DESIGNER -</p>
-            <p className='text-mode-2' ref={secondText}>DESIGNER DEVELOPER - DESIGNER DEVELOPER -</p>
+            <p className='text-mode-1' ref={firstText}>DEVELOPER DESIGNER - DEVELOPER DESIGNER - DEVELOPER DESIGNER -</p>
+            <p className='text-mode-2' ref={secondText}>DESIGNER DEVELOPER - DESIGNER DEVELOPER - DEVELOPER DESIGNER -</p>
           </div>
         </div>
       </motion.main>
@@ -149,7 +167,32 @@ const HomePage = () => {
 
     
 
-      <div className="section-4">section 4 height 100vh</div>
+      <div className="section-4">
+
+     
+  <div class="body">
+    <div class="wrapper">
+      <video ref={videoRef} class="clipped-video"  autoplay muted loop>
+        <source src={video}>
+        </source>
+      </video>
+      <svg height="100%" width="100%">
+        <clipPath id="text-overlay" width="100%" height="100%">
+          <text id="title" x="0" y="0" dy="1.58em">SHOWCASING</text>
+          <text id="title" x="0" y="120" dy="1.58em">MY WORKS</text>
+      
+        </clipPath>
+      </svg>
+    </div>
+  </div>
+  
+ 
+
+
+      </div>
+
+
+
       <div className="section-5">section 5 height 100vh</div>
       <div className="section-6">section 6 height 100vh</div>
     </div>

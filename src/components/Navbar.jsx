@@ -54,7 +54,7 @@ const Navbar = () => {
 
   return (
     <div style={{ position: 'relative' }}>
-      <div className="line-container">
+      <div className="line-container container">
         <svg
           preserveAspectRatio="xMidYMax meet"
           style={{ position: 'absolute' }}
@@ -68,14 +68,14 @@ const Navbar = () => {
             ref={pathRef} // Add the ref here
             d="M316.5 0.5C365 64.5 432.9 232.4 316.5 392C171 591.5 688.5 614.5 631 775.5C573.5 936.5 128.5 963.5 316.5 1527.5C504.5 2091.5 489.5 2080.5 389.5 2276C289.5 2471.5 -301 2812.5 201.5 2997C603.5 3144.6 494.333 3199.17 389.5 3208"
             stroke="black"
-            strokeWidth={4}
+            strokeWidth={6}
           />
         </svg>
       </div>
 
       <div style={{ height: '2px' }} ref={navbarRef}></div>
       {isFixed ? (
-        <div className="navbar-container animate-navbar">
+        <div className="navbar-container animate-navbar container">
           <div className="navbar-contents-after">
             <div className="contents-left">
               <div>Sanath SB</div>
@@ -89,7 +89,7 @@ const Navbar = () => {
           </div>
         </div>
       ) : (
-        <div className="navbar-container navbar">
+        <div className="navbar-container navbar container">
           <div className="navbar-contents-before">
             <div className="navbar-contents-before-content"></div>
           </div>
