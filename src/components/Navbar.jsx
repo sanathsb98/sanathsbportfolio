@@ -79,11 +79,11 @@ const Navbar = () => {
           <div className="navbar-contents-after">
             <div className="contents-left">
               <div>Sanath SB</div>
-              <div>About</div>
-              <div>Work</div>
+              <div className='about'>About</div>
+              <div className='work'>Work</div>
             </div>
             <div className="contents-right">
-              <div>LET'S CONNECT</div>
+              <div className='lets-connect'>LET'S CONNECT</div>
               <div className="email-tab">itssanathsb@gmail.com</div>
             </div>
           </div>

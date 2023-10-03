@@ -8,6 +8,7 @@
     transition: all 0.5s ease;
     /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
     color: rgb(123, 120, 120);
+    margin-right: 4px;
 }
 .animate-navbar{
   
@@ -16,7 +17,7 @@
     top: 0;
     height: 80px;
     background-color:white;
-    z-index: 100;
+    z-index: 600;
     transition: all 0.3s ease-in-out; 
     font-size: clamp(12px, 5vw, 16px);
     font-weight: 500;
@@ -87,4 +88,13 @@ svg{
   display: inline-block;
   height: 100%;
   width: 53%;
+}
+
+@media screen and (min-width: 0px) and (max-width: 950px) {
+.about, .work{
+  display: none;
+}
+.contents-right{
+  display: none;
+}
 }

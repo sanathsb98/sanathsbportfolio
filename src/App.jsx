@@ -7,6 +7,7 @@ import Navbar from '../src/components/Navbar';
 import Lenis from '@studio-freight/lenis'
 
 
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -29,7 +30,7 @@ function App() {
     <>
     
     <HomePage/>
-    
+  
     </>
   )
 }

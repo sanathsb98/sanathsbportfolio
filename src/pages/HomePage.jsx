@@ -9,12 +9,13 @@ import { ScrollTrigger } from 'gsap/all';
 import { debounce } from 'lodash';
 import video from '../videos/design.mp4';
 import react from '../images/react.png';
-import express from '../images/express.png';
+import express from '../images/express logo.png';
 import next from '../images/next.png';
 import supabase from '../images/supabase.png';
-import mongodb from '../images/mongodb.png';
-import python from '../images/python.png'
-
+import mongodb from '../images/mongodblogos.png';
+import python from '../images/python.png';
+import eventwebsite from '../images/eventwebsite.png'
+import Footer from '../components/Footer';
 const slideUp = {
   initial: {
     y: 300
@@ -50,6 +51,20 @@ const HomePage = () => {
   let direction = -20;
 
   const videoRef = useRef(null);
+
+
+  const redirectToNetlify = () => {
+    window.location.href = 'https://eventsitesb.netlify.app/';
+  };
+
+  useEffect(() => {
+    document.querySelector('.watch-btn').addEventListener('click', redirectToNetlify);
+
+    return () => {
+      document.querySelector('.watch-btn').removeEventListener('click', redirectToNetlify);
+    };
+  }, []);
+ 
 
   useEffect(() => {
     const handleMetadataLoad = () => {
@@ -107,13 +122,7 @@ const HomePage = () => {
     gsap.set(secondText.current, { xPercent: xPercent });
     gsap.set(thirdText.current, { xPercent: xPercent });
     gsap.set(fourthText.current, { xPercent: xPercent });
-    gsap.set(fifthText.current, { xPercent: xPercent });
-    gsap.set(sixthText.current, { xPercent: xPercent });
-    gsap.set(thirdLogo.current, { xPercent: xPercent });
-    gsap.set(fourthLogo.current, { xPercent: xPercent });
-    gsap.set(fifthLogo.current, { xPercent: xPercent });
-    gsap.set(sixthLogo.current, { xPercent: xPercent });
-    gsap.set(seventhLogo.current, { xPercent: xPercent });
+   
     requestAnimationFrame(animate);
     xPercent += 0.01 * direction;
   };
@@ -142,6 +151,7 @@ const HomePage = () => {
   }, []);
 
   return (
+    <>
     <div className="homepage container ">
       <div className="section-1"></div>
 
@@ -224,32 +234,70 @@ const HomePage = () => {
       <div className="section-4">
 
      
-  <div class="body">
-    <div class="wrapper">
-      <video ref={videoRef} class="clipped-video"  autoplay muted loop>
-        <source src={video}>
-        </source>
-      </video>
-      <svg height="100%" width="100%">
-        <clipPath id="text-overlay" width="100%" height="100%">
-          <text id="title" x="0" y="0" dy="1.58em">SHOWCASING</text>
-          <text id="title" x="0" y="120" dy="1.58em">MY WORKS</text>
-      
-        </clipPath>
-      </svg>
-    </div>
-  </div>
-  
+        <div class="body">
+          <div class="wrapper">
+            <video ref={videoRef} class="clipped-video" autoplay muted loop>
+              <source src={video}>
+              </source>
+            </video>
+            <svg className='text-svg'>
+              <clipPath className='text-svg' id="text-overlay" >
+
+                <text id="title" x="0" y="180" dy="1">ALL WORKS ARE</text>
+                <text id="title" x="0" y="280" dy="1">SHOWCASED HERE</text>
+                <text id="title" x="0" y="380" dy="1">DEVELOPED WITH</text>
+                <text id="title" x="0" y="480" dy="1">PASSION</text>
+               
+               
+
+               
+               
+
+              </clipPath>
+            </svg>
+          </div>
+        </div>
+
+       
  
 
 
       </div>
 
 
-{/* 
-      <div className="section-5">section 5 height 100vh</div>
-      <div className="section-6">section 6 height 100vh</div> */}
+
+      <div className="section-5">
+
+          <div className='section-5-inner'>
+          <div className='project-container'>
+            <img className='project-image' width="100%" height="100%" src={eventwebsite} />
+            <div className='watch-btn' style={{ color: 'blue' }} >
+              Watch on Netlify
+            </div>
+          </div>
+
+          <div className='project-container'>
+            <img className='project-image' width="100%" height="100%" src={eventwebsite} />
+            <a href="https://eventsitesb.netlify.app/" className='watch-btn' style={{ color: 'blue' }} >
+              Watch on Netlify
+            </a>
+          </div>
+
+          <div className='project-container'>
+            <img className='project-image' width="100%" height="100%" src={eventwebsite} />
+            <a href="https://eventsitesb.netlify.app/" className='watch-btn' style={{ color: 'blue' }} >
+              Watch on Netlify
+            </a>
+          </div>
+        
+          </div>
+
+      </div>
+     
+   
     </div>
+   
+    </>
   );
 };
 
