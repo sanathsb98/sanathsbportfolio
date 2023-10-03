@@ -184,7 +184,8 @@ const HomePage = () => {
           <motion.main variants={slideUp} initial="initial" animate="enter" className="landing">
         <div>
           <div ref={slider} className="slider">
-            <p className='text-mode-1' ref={firstText}>DEVELOPER DESIGNER <span style={{color:'black'}}>DEVELOPER</span> DESIGNER <span style={{color:'black'}}>DEVELOPER</span> DESIGNER -</p>
+            <p className='text-mode-1' ref={firstText}><span style={{color:'black'}}>DEVELOPER</span> DESIGNER <span style={{color:'black'}}>DEVELOPER</span> DESIGNER <span style={{color:'black'}}>DEVELOPER</span> DESIGNER <span style={{color:'black'}}>DEVELOPER</span> DESIGNER <span style={{color:'black'}}>DEVELOPER</span> DESIGNER <span style={{color:'black'}}>DEVELOPER</span> DESIGNER <span style={{color:'black'}}>DEVELOPER</span> DESIGNER </p>
+            <p className='text-mode-1' ref={firstText}><span style={{color:'black'}}>DEVELOPER</span> DESIGNER <span style={{color:'black'}}>DEVELOPER</span> DESIGNER <span style={{color:'black'}}>DEVELOPER</span> DESIGNER <span style={{color:'black'}}>DEVELOPER</span> DESIGNER <span style={{color:'black'}}>DEVELOPER</span> DESIGNER <span style={{color:'black'}}>DEVELOPER</span> DESIGNER <span style={{color:'black'}}>DEVELOPER</span> DESIGNER </p>
             <p className='text-mode-2' ref={secondText}>DESIGNER DEVELOPER <span style={{color:'black'}}>DESIGNER</span> DEVELOPER DEVELOPER DESIGNER -</p>
 
                   <div ref={fourthLogo}  style={{marginTop:'100px', display: 'flex',justifyContent:'space-between',alignItems: 'center' }}>
@@ -245,8 +246,8 @@ const HomePage = () => {
 
                 <text id="title" x="0" y="180" dy="1">ALL WORKS ARE</text>
                 <text id="title" x="0" y="280" dy="1">SHOWCASED HERE</text>
-                <text id="title" x="0" y="380" dy="1">DEVELOPED WITH</text>
-                <text id="title" x="0" y="480" dy="1">PASSION</text>
+                <text id="title" x="0" y="380" dy="1">SHOWCASED HERE</text>
+                <text id="title" x="0" y="480" dy="1">SHOWCASED HERE</text>
                
                
 
@@ -269,7 +270,7 @@ const HomePage = () => {
       <div className="section-5">
 
           <div className='section-5-inner'>
-          <div className='project-container'>
+          <div  className='project-container'>
             <img className='project-image' width="100%" height="100%" src={eventwebsite} />
             <div className='watch-btn' style={{ color: 'blue' }} >
               Watch on Netlify
